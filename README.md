@@ -40,19 +40,37 @@ Face-Mask-Detection/
 - [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/install/) installed on your machine.
 - Alternatively, Python 3.9+ and Node.js 18+ for local non-Docker development.
 
+## Quick Start (via Docker Hub)
+
+You can run the application immediately without building the code by using our pre-built images on Docker Hub.
+
+1.  **Pull the images:**
+
+    ```bash
+    docker pull thychantha/face-mask-backend:latest
+    docker pull thychantha/face-mask-frontend:latest
+    ```
+
+2.  **Run with Docker Compose:**
+    Ensure your `docker-compose.yml` uses the images (or simply update the file to point to them), or just build locally as described below.
+
 ## Setup & Running with Docker (Recommended)
 
 1.  **Clone the repository** (if applicable) or navigate to the project folder:
+
     ```bash
     cd path/to/Face-Mask-Detection
     ```
 
 2.  **Build and Start the Containers:**
     Run the following command in the root directory:
+
     ```bash
     docker-compose up --build
     ```
+
     This command will:
+
     - Build the backend and frontend images.
     - Start the PostgreSQL database container.
     - Start the FastAPI backend at `http://localhost:8000`.
@@ -70,9 +88,11 @@ Face-Mask-Detection/
 ## Manual Setup (Without Docker)
 
 ### 1. Database Setup
+
 Ensure you have PostgreSQL installed and running. Create a database named `mask_db`. Update the `DATABASE_URL` in `backend/app/database.py` if your credentials differ from the defaults.
 
 ### 2. Backend Setup
+
 1.  Navigate to the `backend` directory:
     ```bash
     cd backend
@@ -93,6 +113,7 @@ Ensure you have PostgreSQL installed and running. Create a database named `mask_
     The backend will be available at `http://localhost:8000`.
 
 ### 3. Frontend Setup
+
 1.  Navigate to the `frontend` directory:
     ```bash
     cd frontend
