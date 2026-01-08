@@ -1,0 +1,44 @@
+
+
+services:
+  backend:
+    build: ./backend
+    container_name: mask_backend
+    volumes:
+      - ./backend/app:/code/app
+      - ./backend/uploads:/code/uploads
+      - ./backend/results:/code/results
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:chantha123@db/mask_db
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: mask_frontend
+    volumes:
+      - ./frontend/src:/app/src
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15-alpine
+    container_name: mask_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=chantha123
+      - POSTGRES_DB=mask_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_data:

@@ -1,0 +1,1 @@
+CREATE DATABASE mask_db;
