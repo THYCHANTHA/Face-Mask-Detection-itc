@@ -42,7 +42,7 @@ Face-Mask-Detection/
 
 ## Quick Start (via Docker Hub)
 
-You can run the application immediately without building the code by using our pre-built images on Docker Hub.
+You can run the application immediately without building the code by using our pre-built images on Docker Hub: [https://hub.docker.com/repositories/thychantha](https://hub.docker.com/repositories/thychantha)
 
 1.  **Pull the images:**
 
