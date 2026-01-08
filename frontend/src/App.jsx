@@ -8,11 +8,11 @@ import {
   CheckCircle2,
   AlertTriangle,
   XCircle,
-  Trash2,
   Image as ImageIcon,
   ChevronRight,
   Loader2,
   Camera,
+  Trash2,
   Video
 } from 'lucide-react';
 
