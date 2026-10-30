@@ -116,7 +116,7 @@ Browsers only allow webcam access on `localhost` or HTTPS.
 ## Limitations
 
 - No evaluation metrics, training code or dataset information are included.
-- `docker-compose.yml` contains **development default credentials** (a PostgreSQL password and a matching `DATABASE_URL`) committed in plain text. They are intended for local containers only and must be replaced, preferably with environment variables, before any real deployment.
+- `docker-compose.yml` and the fallback value in `backend/app/database.py` contain **development default credentials** (a PostgreSQL password and a matching `DATABASE_URL`) committed in plain text. They are intended for local containers only and must be replaced, preferably with environment variables, before any real deployment.
 - The API allows requests from any origin (CORS `*`) and the frontend container runs the Vite development server.
 - The frontend's `package.json` is still named `currency-client` (left over from another project).
 - No automated tests.
